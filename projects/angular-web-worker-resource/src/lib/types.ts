@@ -14,8 +14,11 @@ export interface WebWorkerResourceOptions<TParams, TResult>
 	/**
 	 * Reactive computation that produces the params sent to the worker via postMessage.
 	 * Returning `undefined` keeps the resource idle (worker won't be invoked).
+	 *
+	 * When omitted, the worker runs once immediately and won't rerun
+	 * unless the resource is manually reloaded.
 	 */
-	params: () => TParams | undefined
+	params?: () => TParams | undefined
 
 	/**
 	 * Factory that creates a new Worker instance.
