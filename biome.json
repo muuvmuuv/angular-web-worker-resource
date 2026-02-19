@@ -73,5 +73,21 @@
 	},
 	"json": {
 		"formatter": { "enabled": true }
-	}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.spec.ts"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": "off",
+						"noExcessiveLinesPerFunction": "off"
+					},
+					"suspicious": {
+						"noEmptyBlockStatements": "off"
+					}
+				}
+			}
+		}
+	]
 }

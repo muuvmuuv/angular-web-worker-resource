@@ -7,6 +7,8 @@
 	"scripts": {
 		"build": "pnpm --filter=angular-web-worker-resource build",
 		"watch": "pnpm --filter=angular-web-worker-resource watch",
+		"test": "pnpm --filter=angular-web-worker-resource test",
+		"test:watch": "pnpm --filter=angular-web-worker-resource test:watch",
 		"serve": "pnpm --filter=app serve",
 		"serve-extended": "pnpm --filter=app serve-extended",
 		"build-app": "pnpm --filter=app build",

@@ -1,0 +1,20 @@
+name: Setup
+description: Checkout, install Node.js, pnpm, and dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24
+        registry-url: "https://registry.npmjs.org"
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
+        run_install: true
