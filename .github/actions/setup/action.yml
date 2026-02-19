@@ -10,10 +10,6 @@ runs:
         node-version: 24
         registry-url: "https://registry.npmjs.org"
 
-    - name: Ensure library dist exists for workspace install
-      shell: bash
-      run: mkdir -p projects/angular-web-worker-resource/dist
-
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
       with:

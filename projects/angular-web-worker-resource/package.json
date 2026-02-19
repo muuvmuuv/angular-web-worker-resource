@@ -37,5 +37,9 @@
 	"engines": {
 		"node": ">=22"
 	},
-	"sideEffects": false
+	"sideEffects": false,
+	"publishConfig": {
+		"directory": "dist",
+		"linkDirectory": true
+	}
 }
