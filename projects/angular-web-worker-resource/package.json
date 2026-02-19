@@ -1,6 +1,6 @@
 {
 	"name": "angular-web-worker-resource",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "A reactive Angular resource that delegates work to Web Workers with automatic lifecycle management",
 	"license": "MIT",
 	"keywords": [
