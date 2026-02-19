@@ -33,6 +33,11 @@
 							"subresourceIntegrity": true,
 							"outputHashing": "all"
 						},
+						"github-pages": {
+							"subresourceIntegrity": true,
+							"outputHashing": "all",
+							"baseHref": "/angular-web-worker-resource/"
+						},
 						"development": {
 							"optimization": false,
 							"extractLicenses": false,
