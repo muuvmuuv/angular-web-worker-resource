@@ -2,10 +2,7 @@
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"outDir": "./out-tsc",
-		"paths": {
-			"angular-web-worker-resource": ["../angular-web-worker-resource/dist"]
-		}
+		"outDir": "./out-tsc"
 	},
 	"files": [],
 	"include": [],

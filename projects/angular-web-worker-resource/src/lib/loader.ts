@@ -1,12 +1,32 @@
 import type { WebWorkerResourceOptions } from "./types"
 
 /**
+ * Shape of a structured message sent by the `onMessage` helper from
+ * `angular-web-worker-resource/worker`. Plain workers that post raw
+ * values directly are also supported.
+ */
+type WorkerEnvelope<T> = { ok: true; value: T } | { ok: false; error: string }
+
+function isEnvelope<T>(data: unknown): data is WorkerEnvelope<T> {
+	return (
+		typeof data === "object" &&
+		data !== null &&
+		"ok" in data &&
+		typeof (data as Record<string, unknown>).ok === "boolean"
+	)
+}
+
+/**
  * Creates a loader function compatible with Angular's `resource()` API
  * that delegates work to a Web Worker.
  *
  * The loader spawns a fresh worker for each invocation, posts the params,
  * and resolves with the first message received. The worker is terminated
  * on completion, error, or abort.
+ *
+ * Supports two message formats:
+ * - **Envelope** (from `onMessage` helper): `{ ok: true, value }` or `{ ok: false, error }`
+ * - **Plain**: raw value posted directly via `postMessage(result)`
  */
 export function createWorkerLoader<TParams, TResult>(
 	options: WebWorkerResourceOptions<TParams, TResult>,
@@ -35,9 +55,18 @@ export function createWorkerLoader<TParams, TResult>(
 				{ once: true },
 			)
 
-			worker.onmessage = ({ data }: MessageEvent<TResult>) => {
+			worker.onmessage = ({ data }: MessageEvent<unknown>) => {
 				cleanup()
-				resolve(data)
+				if (isEnvelope<TResult>(data)) {
+					if (data.ok) {
+						resolve(data.value)
+					} else {
+						reject(new Error(data.error))
+					}
+				} else {
+					// Plain message from a hand-written worker
+					resolve(data as TResult)
+				}
 			}
 
 			worker.onerror = (event) => {

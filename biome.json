@@ -60,8 +60,7 @@
 				}
 			},
 			"correctness": {
-				"recommended": true,
-				"useQwikValidLexicalScope": "off"
+				"recommended": true
 			},
 			"complexity": "error",
 			"suspicious": "error"
