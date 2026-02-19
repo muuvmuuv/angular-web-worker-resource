@@ -45,10 +45,24 @@
 			"nursery": {
 				"recommended": true
 			},
-			"performance": "error",
+			"performance": {
+				"recommended": true,
+				"noBarrelFile": "off"
+			},
 			"security": "error",
-			"style": "error",
-			"correctness": "error",
+			"style": {
+				"recommended": true,
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"strictCase": false
+					}
+				}
+			},
+			"correctness": {
+				"recommended": true,
+				"useQwikValidLexicalScope": "off"
+			},
 			"complexity": "error",
 			"suspicious": "error"
 		}

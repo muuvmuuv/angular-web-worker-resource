@@ -1,13 +1,14 @@
 {
-	"name": "angular-router-menus",
-	"version": "21.0.2",
-	"description": "Angular Router menus that build itself on-the-fly with options",
+	"name": "angular-web-worker-resource",
+	"version": "0.0.1",
+	"description": "A reactive Angular resource that delegates work to Web Workers with automatic lifecycle management",
 	"license": "MIT",
 	"keywords": [
 		"angular",
-		"angular-router",
-		"router",
-		"menu"
+		"web-worker",
+		"resource",
+		"signal",
+		"reactive"
 	],
 	"scripts": {
 		"build": "ng build",
@@ -18,8 +19,7 @@
 		"tslib": "^2.8.1"
 	},
 	"peerDependencies": {
-		"@angular/core": "^21.0.2",
-		"@angular/router": "^21.0.2"
+		"@angular/core": "^21.0.2"
 	},
 	"contributors": [
 		{
@@ -29,8 +29,8 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/muuvmuuv/angular-router-menus",
-		"directory": "projects/angular-router-menus"
+		"url": "https://github.com/muuvmuuv/angular-web-worker-resource",
+		"directory": "projects/angular-web-worker-resource"
 	},
 	"engines": {
 		"node": ">=22"

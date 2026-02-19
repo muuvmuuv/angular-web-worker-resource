@@ -37,9 +37,9 @@ jobs:
         run: pnpm check
 
       - name: Build lib
-        working-directory: projects/angular-router-menus
+        working-directory: projects/angular-web-worker-resource
         run: pnpm build
 
       - name: Publish lib
-        working-directory: projects/angular-router-menus/dist
+        working-directory: projects/angular-web-worker-resource/dist
         run: npm publish

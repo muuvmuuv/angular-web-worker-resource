@@ -1,12 +1,12 @@
 {
-	"name": "angular-router-menus-workspace",
-	"version": "21.0.2",
+	"name": "angular-web-worker-resource-workspace",
+	"version": "0.0.1",
 	"license": "MIT",
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"build": "pnpm --filter=angular-router-menus build",
-		"watch": "pnpm --filter=angular-router-menus watch",
+		"build": "pnpm --filter=angular-web-worker-resource build",
+		"watch": "pnpm --filter=angular-web-worker-resource watch",
 		"serve": "pnpm --filter=app serve",
 		"serve-extended": "pnpm --filter=app serve-extended",
 		"build-app": "pnpm --filter=app build",

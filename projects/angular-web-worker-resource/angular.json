@@ -6,7 +6,7 @@
 		"analytics": false
 	},
 	"projects": {
-		"angular-router-menus": {
+		"angular-web-worker-resource": {
 			"projectType": "library",
 			"root": "./",
 			"sourceRoot": "./src",

@@ -3,7 +3,7 @@
 	"files": [],
 	"references": [
 		{
-			"path": "projects/angular-router-menus"
+			"path": "projects/angular-web-worker-resource"
 		},
 		{
 			"path": "projects/app"
