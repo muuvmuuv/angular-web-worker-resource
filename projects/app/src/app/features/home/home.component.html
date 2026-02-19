@@ -1,7 +1,29 @@
-<h2 class="text-2xl text-slate-300 mb-4 font-black">HOME</h2>
+<section class="rounded-lg bg-slate-800 p-6 shadow-lg">
+	<h2 class="text-xl font-bold text-slate-100 mb-2">Fibonacci Worker</h2>
+	<p class="text-sm text-slate-400 mb-6">
+		Computes the nth Fibonacci number using a deliberately slow recursive algorithm inside a
+		Web Worker. The UI stays responsive because the computation runs off the main thread.
+	</p>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptatum quasi velit rerum
-	tenetur sit explicabo numquam sunt iusto placeat temporibus inventore impedit aspernatur
-	ipsam atque praesentium, mollitia cumque veniam!
-</p>
+	<div class="flex items-center gap-3 mb-6">
+		<label class="text-slate-300 text-sm font-medium" for="fib-input">n =</label>
+		<input
+			class="bg-slate-700 text-slate-100 px-3 py-1.5 rounded border border-slate-600 focus:border-blue-500 focus:outline-none w-24 text-sm"
+			id="fib-input"
+			type="number"
+			[ngModel]="input()"
+			(ngModelChange)="input.set($event)"
+		/>
+	</div>
+
+	<div class="rounded bg-slate-900 px-4 py-3 font-mono text-sm">
+		@if (fibonacci.isLoading()) {
+			<span class="text-yellow-400">computing...</span>
+		} @else if (fibonacci.error(); as error) {
+			<span class="text-red-400">error: {{ error }}</span>
+		} @else {
+			<span class="text-slate-500">fibonacci({{ input() }}) =</span>
+			<span class="text-green-400 ml-1">{{ fibonacci.value() }}</span>
+		}
+	</div>
+</section>
