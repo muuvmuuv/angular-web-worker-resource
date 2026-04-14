@@ -6,6 +6,9 @@
 		"paths": {
 			"angular-web-worker-resource": [
 				"./projects/angular-web-worker-resource/src/public-api.ts"
+			],
+			"angular-web-worker-resource/worker": [
+				"./projects/angular-web-worker-resource/worker/src/public-api.ts"
 			]
 		},
 		"strict": true,
