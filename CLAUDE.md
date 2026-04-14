@@ -38,8 +38,12 @@ Use pnpm workspace filtering to run commands in specific projects:
 
 ### Code Quality
 
-- `pnpm check` - Run Biome linter to check code quality
-- `pnpm format` - Format code and apply fixes with Biome
+- `pnpm check` - Run oxlint linter and oxfmt format checker
+- `pnpm format` - Fix lint issues with oxlint and format code with oxfmt
+
+### Git Hooks (lefthook)
+
+Pre-commit hooks automatically run oxlint and oxfmt on staged files. Commit messages are validated against Angular commit conventions via commitlint.
 
 ### Upgrade Workflow
 
@@ -118,9 +122,11 @@ When upgrading dependencies:
 ## Dependencies
 
 - Angular 21+ with standalone components
-- Node.js 22+ (managed via Proto tools - see `.prototools`)
+- Node.js 24+ (managed via Proto tools - see `.prototools`)
 - pnpm 10+ (managed via Proto tools - see `.prototools`)
-- Biome for linting/formatting (configured in `biome.json`)
+- oxlint for linting (configured in `.oxlintrc.json`)
+- oxfmt for formatting (configured in `.oxfmtrc.json`)
+- lefthook for git hooks (configured in `lefthook.yml`)
 - TypeScript with strict mode enabled
 
 ## Development Environment

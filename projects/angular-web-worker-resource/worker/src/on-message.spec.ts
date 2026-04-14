@@ -39,10 +39,7 @@ describe("onMessage", () => {
 		simulateIncomingMessage(21)
 		await flushPromiseChain()
 
-		expect(postMessageSpy).toHaveBeenCalledWith(
-			{ ok: true, value: 42 },
-			{ transfer: [] },
-		)
+		expect(postMessageSpy).toHaveBeenCalledWith({ ok: true, value: 42 }, { transfer: [] })
 	})
 
 	it("posts success envelope for async handler", async () => {

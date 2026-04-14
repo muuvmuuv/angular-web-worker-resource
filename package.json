@@ -1,9 +1,9 @@
 {
 	"name": "angular-web-worker-resource-workspace",
 	"version": "1.0.0",
+	"private": true,
 	"license": "MIT",
 	"type": "module",
-	"private": true,
 	"scripts": {
 		"build": "pnpm --filter=angular-web-worker-resource build",
 		"watch": "pnpm --filter=angular-web-worker-resource watch",
@@ -12,30 +12,30 @@
 		"serve": "pnpm --filter=app serve",
 		"serve-extended": "pnpm --filter=app serve-extended",
 		"build-app": "pnpm --filter=app build",
-		"check": "biome check .",
-		"format": "biome check --unsafe --write ."
+		"check": "oxlint . && oxfmt --check .",
+		"format": "oxlint --fix . && oxfmt ."
 	},
 	"devDependencies": {
-		"@angular-devkit/architect": "^0.2100.1",
-		"@angular-devkit/build-angular": "^21.0.1",
-		"@angular-devkit/core": "^21.0.1",
-		"@angular/build": "^21.0.1",
-		"@angular/cli": "^21.0.1",
-		"@angular/compiler-cli": "^21.0.2",
-		"@biomejs/biome": "^2.3.8",
-		"@commitlint/cli": "^20.1.0",
-		"@commitlint/config-angular": "^20.0.0",
+		"@angular-devkit/build-angular": "^21.2.7",
+		"@angular-devkit/core": "^21.2.7",
+		"@angular/build": "^21.2.7",
+		"@angular/cli": "^21.2.7",
+		"@angular/compiler-cli": "^21.2.8",
+		"@commitlint/cli": "^20.5.0",
+		"@commitlint/config-angular": "^20.5.0",
 		"@release-it/bumper": "^7.0.5",
-		"@types/node": "^24.10.1",
+		"@types/node": "^24.12.2",
 		"del-cli": "^7.0.0",
-		"lefthook": "^2.1.1",
-		"ng-packagr": "^21.0.0",
-		"prettier": "^3.7.4",
-		"release-it": "^19.0.6",
+		"lefthook": "^2.1.5",
+		"ng-packagr": "^21.2.2",
+		"oxfmt": "^0.45.0",
+		"oxlint": "^1.60.0",
+		"oxlint-tsgolint": "^0.21.0",
+		"release-it": "^19.2.4",
 		"typescript": "5.9.3",
-		"vitest": "^4.0.18"
+		"vitest": "^4.1.4"
 	},
 	"engines": {
-		"node": ">=22"
+		"node": ">=24"
 	}
 }

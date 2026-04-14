@@ -5,8 +5,5 @@ import {
 } from "@angular/core"
 
 export const config: ApplicationConfig = {
-	providers: [
-		provideZonelessChangeDetection(),
-		provideBrowserGlobalErrorListeners(),
-	],
+	providers: [provideZonelessChangeDetection(), provideBrowserGlobalErrorListeners()],
 }

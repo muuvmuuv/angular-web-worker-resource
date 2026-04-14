@@ -27,20 +27,20 @@ pnpm add angular-web-worker-resource
 ### Component
 
 ```typescript
-import { signal } from "@angular/core";
-import { webWorkerResource } from "angular-web-worker-resource";
+import { signal } from "@angular/core"
+import { webWorkerResource } from "angular-web-worker-resource"
 
 @Component({
 	/* ... */
 })
 export class MyComponent {
-	readonly input = signal(40);
+	readonly input = signal(40)
 
 	readonly result = webWorkerResource<number, number>({
 		params: () => this.input(),
 		worker: () => new Worker(new URL("./fibonacci.worker", import.meta.url)),
 		defaultValue: 0,
-	});
+	})
 }
 ```
 
@@ -58,14 +58,14 @@ export class MyComponent {
 
 ```typescript
 // fibonacci.worker.ts
-import { onMessage } from "angular-web-worker-resource/worker";
+import { onMessage } from "angular-web-worker-resource/worker"
 
 function fibonacci(n: number): number {
-	if (n <= 1) return n;
-	return fibonacci(n - 1) + fibonacci(n - 2);
+	if (n <= 1) return n
+	return fibonacci(n - 1) + fibonacci(n - 2)
 }
 
-onMessage<number, number>((n) => fibonacci(n));
+onMessage<number, number>((n) => fibonacci(n))
 ```
 
 ### Worker (plain)
@@ -75,9 +75,9 @@ You can also write workers without the helper. Plain `postMessage` values are su
 ```typescript
 // fibonacci.worker.ts
 addEventListener("message", ({ data }: MessageEvent<number>) => {
-	const result = fibonacci(data);
-	postMessage(result);
-});
+	const result = fibonacci(data)
+	postMessage(result)
+})
 ```
 
 ### Without params

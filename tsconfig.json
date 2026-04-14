@@ -3,10 +3,10 @@
 	"files": [],
 	"references": [
 		{
-			"path": "projects/angular-web-worker-resource"
+			"path": "./projects/angular-web-worker-resource"
 		},
 		{
-			"path": "projects/app"
+			"path": "./projects/app"
 		}
 	]
 }

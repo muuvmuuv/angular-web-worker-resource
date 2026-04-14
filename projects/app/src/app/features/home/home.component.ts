@@ -13,12 +13,9 @@ import { debounceTime } from "rxjs"
 })
 export class HomeFeature {
 	readonly input = signal(40)
-	readonly debouncedInput = toSignal(
-		toObservable(this.input).pipe(debounceTime(500)),
-		{
-			initialValue: this.input(),
-		},
-	)
+	readonly debouncedInput = toSignal(toObservable(this.input).pipe(debounceTime(500)), {
+		initialValue: this.input(),
+	})
 
 	readonly fibonacci = webWorkerResource<number, number>({
 		params: () => this.debouncedInput(),

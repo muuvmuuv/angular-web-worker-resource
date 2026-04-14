@@ -2,6 +2,12 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compileOnSave": false,
 	"compilerOptions": {
+		"rootDir": "../..",
+		"paths": {
+			"angular-web-worker-resource": [
+				"./projects/angular-web-worker-resource/src/public-api.ts"
+			]
+		},
 		"strict": true,
 		"noImplicitAny": true,
 		"noImplicitReturns": true,

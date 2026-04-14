@@ -9,8 +9,10 @@ import type { BaseResourceOptions } from "@angular/core"
  * @typeParam TParams - The type of params sent to the worker via `postMessage`.
  * @typeParam TResult - The type of the result received from the worker's `onmessage`.
  */
-export interface WebWorkerResourceOptions<TParams, TResult>
-	extends Omit<BaseResourceOptions<TResult, TParams>, "params"> {
+export interface WebWorkerResourceOptions<TParams, TResult> extends Omit<
+	BaseResourceOptions<TResult, TParams>,
+	"params"
+> {
 	/**
 	 * Reactive computation that produces the params sent to the worker via postMessage.
 	 * Returning `undefined` keeps the resource idle (worker won't be invoked).

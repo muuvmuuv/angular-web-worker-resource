@@ -2,12 +2,19 @@
 	"permissions": {
 		"allow": [
 			"Bash(pnpm:*)",
-			"WebFetch(domain:biomejs.dev)",
+			"Bash(oxlint:*)",
+			"Bash(oxfmt:*)",
+			"Bash(git status:*)",
+			"Bash(git log:*)",
+			"Bash(git diff:*)",
+			"Bash(ng:*)",
+			"WebFetch(domain:oxc.rs)",
 			"Bash(git add:*)",
 			"Bash(git commit:*)",
 			"WebFetch(domain:github.com)",
 			"WebFetch(domain:angular.dev)"
 		],
 		"deny": []
-	}
+	},
+	"enabledMcpjsonServers": ["angular-cli"]
 }
