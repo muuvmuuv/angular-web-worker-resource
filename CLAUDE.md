@@ -45,6 +45,8 @@ Use pnpm workspace filtering to run commands in specific projects:
 
 Pre-commit hooks automatically run oxlint and oxfmt on staged files. Commit messages are validated against Angular commit conventions via commitlint.
 
+Do not add `Co-authored-by` trailers to commit messages.
+
 ### Upgrade Workflow
 
 - `./upgrade.fish` - Automated dependency upgrade script that:
