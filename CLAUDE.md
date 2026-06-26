@@ -9,21 +9,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `pnpm serve` - Run the demo application with hot reload
 - `pnpm build` - Build the angular-web-worker-resource library
 - `pnpm watch` - Build the library in watch mode
+- `pnpm test` - Run unit tests (Vitest)
+- `pnpm test:watch` - Run unit tests in watch mode
 
 ### Release Process
 
-To release the library to npm:
+Releasing is a two-stage flow — run `pnpm release` locally, then CI publishes:
 
-1. `pnpm --filter=angular-web-worker-resource release` - This will:
-   - Build the library with `ng build`
-   - Navigate to the `dist/` folder (the built output)
-   - Publish from the dist folder using `npm publish`
+1. `pnpm release` - Uses release-it which will:
+   - Run `pnpm check` as a pre-release hook
+   - Bump the version in both `projects/angular-web-worker-resource/package.json` and the root `package.json` (via @release-it/bumper)
+   - Create a git commit (`build: release v<version>`) and tag (`v<version>`)
+   - Requires a clean working directory and the `main` branch
+   - Does **not** publish to npm directly
+2. Pushing the `v*` tag triggers the GitHub Actions `publish.yml` workflow, which builds the library and runs `npm publish` from `dist/` via npm OIDC trusted publishing.
 
-**Important:** The library must be published from the `dist/` folder, not the project root, because:
-
-- Angular builds create the proper package.json with correct entry points
-- The dist folder contains the compiled library code that consumers need
-- The source project folder contains development files not meant for npm
+**Important:** The library is published from the `dist/` folder, not the project root, because Angular builds create the proper package.json with correct entry points and compiled output; the source project folder contains development files not meant for npm.
 
 ### Workspace Commands
 
@@ -124,12 +125,13 @@ When upgrading dependencies:
 ## Dependencies
 
 - Angular 22+ with standalone components
-- Node.js 24.15+ (managed via Proto tools - see `.prototools`)
+- Node.js 24+ (managed via Proto tools - see `.prototools`)
 - pnpm 11+ (managed via Proto tools - see `.prototools`)
 - oxlint for linting (configured in `.oxlintrc.json`)
 - oxfmt for formatting (configured in `.oxfmtrc.json`)
 - lefthook for git hooks (configured in `lefthook.yml`)
-- TypeScript with strict mode enabled
+- Vitest for unit tests (configured in `projects/angular-web-worker-resource/vitest.config.ts`)
+- TypeScript 6.0.x with strict mode enabled
 
 ## Development Environment
 

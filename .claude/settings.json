@@ -4,15 +4,16 @@
 			"Bash(pnpm:*)",
 			"Bash(oxlint:*)",
 			"Bash(oxfmt:*)",
+			"Bash(ng:*)",
 			"Bash(git status:*)",
 			"Bash(git log:*)",
 			"Bash(git diff:*)",
-			"Bash(ng:*)",
-			"WebFetch(domain:oxc.rs)",
 			"Bash(git add:*)",
 			"Bash(git commit:*)",
 			"WebFetch(domain:github.com)",
-			"WebFetch(domain:angular.dev)"
+			"WebFetch(domain:angular.dev)",
+			"WebFetch(domain:oxc.rs)",
+			"WebFetch(domain:tsx.is)"
 		],
 		"deny": []
 	},
