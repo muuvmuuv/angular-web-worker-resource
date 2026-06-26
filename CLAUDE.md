@@ -121,9 +121,9 @@ When upgrading dependencies:
 
 ## Dependencies
 
-- Angular 21+ with standalone components
-- Node.js 24+ (managed via Proto tools - see `.prototools`)
-- pnpm 10+ (managed via Proto tools - see `.prototools`)
+- Angular 22+ with standalone components
+- Node.js 24.15+ (managed via Proto tools - see `.prototools`)
+- pnpm 11+ (managed via Proto tools - see `.prototools`)
 - oxlint for linting (configured in `.oxlintrc.json`)
 - oxfmt for formatting (configured in `.oxfmtrc.json`)
 - lefthook for git hooks (configured in `lefthook.yml`)
