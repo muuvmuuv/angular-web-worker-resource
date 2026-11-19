@@ -30,9 +30,7 @@ pnpm add angular-web-worker-resource
 import { signal } from "@angular/core"
 import { webWorkerResource } from "angular-web-worker-resource"
 
-@Component({
-	/* ... */
-})
+@Component({/* ... */})
 export class MyComponent {
 	readonly input = signal(40)
 
